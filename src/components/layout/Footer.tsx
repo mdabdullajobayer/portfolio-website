@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { profileData } from "@/data/profile";
 import { ArrowUp, Code2 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
@@ -12,8 +13,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center font-bold text-slate-950 font-mono text-sm">
-              {profileData.initials}
+            <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0">
+              <Image
+                src={profileData.logoUrl}
+                alt={profileData.name}
+                width={32}
+                height={32}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <p className="text-sm font-semibold text-white">

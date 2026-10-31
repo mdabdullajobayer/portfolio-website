@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { speakingTalks } from "@/data/speaking";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
@@ -10,6 +11,7 @@ import {
   Search,
   Layers,
   Mic,
+  Camera,
 } from "lucide-react";
 
 export function PublicSpeaking() {
@@ -119,6 +121,55 @@ export function PublicSpeaking() {
                 </div>
               ))}
             </div>
+
+            {/* Live Event Photos Gallery */}
+            {talk.photos && talk.photos.length > 0 && (
+              <div className="mt-10 pt-8 border-t border-slate-800/80">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-2">
+                    <div className="p-1.5 rounded-md bg-cyan-950/40 border border-cyan-800/50 text-cyan-400">
+                      <Camera className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase tracking-wider font-mono text-slate-200">
+                        Live Moments &bull; {talk.event}
+                      </h4>
+                      <p className="text-xs text-slate-400">
+                        Speaking session and interactive Q&amp;A at weDevs office
+                      </p>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono text-cyan-400/80 border border-cyan-500/20 px-2.5 py-1 rounded-full bg-cyan-950/30">
+                    3 Event Photos
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {talk.photos.map((photo, idx) => (
+                    <div
+                      key={idx}
+                      className="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between"
+                    >
+                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                      </div>
+                      <div className="p-3.5 bg-slate-900/90 border-t border-slate-800/60">
+                        <p className="text-xs text-slate-300 leading-snug font-medium">
+                          {photo.caption}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

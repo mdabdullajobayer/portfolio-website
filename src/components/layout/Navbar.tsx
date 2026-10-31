@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { profileData } from "@/data/profile";
 import { Menu, X, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
@@ -55,8 +56,15 @@ export function Navbar() {
             className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg p-1"
             aria-label="Abdullah Jobayer Homepage"
           >
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center font-bold text-slate-950 font-mono text-base shadow-sm group-hover:scale-105 transition-transform">
-              {profileData.initials}
+            <div className="relative w-10 h-10 rounded-full overflow-hidden group-hover:scale-105 transition-transform shrink-0">
+              <Image
+                src={profileData.logoUrl}
+                alt={profileData.name}
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold text-white tracking-tight group-hover:text-cyan-400 transition-colors">

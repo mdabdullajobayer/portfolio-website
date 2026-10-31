@@ -8,6 +8,11 @@ export interface SpeakingTalk {
   embedUrl: string;
   slidesUrl: string;
   tags: string[];
+  photos: {
+    src: string;
+    alt: string;
+    caption: string;
+  }[];
   keyTopics: {
     title: string;
     description: string;
@@ -28,6 +33,23 @@ export const speakingTalks: SpeakingTalk[] = [
     slidesUrl:
       "https://docs.google.com/presentation/d/1Ft-_ABnAZLEoShdqrvdjuA_AXOqo6VE_NCMN4RPBCfI/edit?usp=sharing",
     tags: ["Laravel", "Laravel Meetup", "AI Integration", "Semantic Search", "Intelligent Chatbots", "E-Commerce Architecture"],
+    photos: [
+      {
+        src: "/images/meetup/1.jpg",
+        alt: "MD Abdulla Jobayer presenting at Laravel Meetup in weDevs office",
+        caption: "Live presentation at Laravel Meetup (weDevs office)",
+      },
+      {
+        src: "/images/meetup/2.jpg",
+        alt: "Presentation on AI architecture in Laravel e-commerce",
+        caption: "Explaining vector embeddings and chatbot integration",
+      },
+      {
+        src: "/images/meetup/3.jpg",
+        alt: "Audience and community discussion at Laravel Meetup",
+        caption: "Interactive Q&A session with fellow engineers",
+      },
+    ],
     keyTopics: [
       {
         title: "Semantic Vector Search",

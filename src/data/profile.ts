@@ -5,6 +5,9 @@ export interface ProfileData {
   experienceYears: string;
   location: string;
   headline: string;
+  avatarUrl: string;
+  portraitUrl: string;
+  logoUrl: string;
   bio: string[];
   github: string;
   linkedin: string;
@@ -25,6 +28,9 @@ export const profileData: ProfileData = {
   experienceYears: "2+ Years",
   location: "Dhaka, Bangladesh",
   headline: "Building Software That Solves Real Business Problems.",
+  avatarUrl: "/images/profile-avatar.jpg",
+  portraitUrl: "/images/profile-portrait.jpg",
+  logoUrl: "/images/logo-icon.png",
   bio: [
     "I’m a Software Developer with 2+ years of professional experience building business applications, ERP systems, RESTful APIs, and SaaS platforms. My primary technology stack includes PHP, Laravel, React, Next.js, and relational databases, with practical experience spanning backend engineering, full-stack development, database optimization, and production deployment.",
     "I have worked across multiple business domains, including Human Resource Management (HRM), Payroll, Customer Relationship Management (CRM), Point of Sale (POS), Inventory Management, and ERP systems. Working with these systems has helped me understand how software connects business operations, financial workflows, employee management, customer relationships, and inventory processes.",

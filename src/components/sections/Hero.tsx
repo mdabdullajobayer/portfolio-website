@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { profileData } from "@/data/profile";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -34,10 +35,27 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Main Copy */}
           <div className="lg:col-span-7 flex flex-col items-start">
-            {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 font-mono mb-6">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Available for Software Engineering Roles &amp; Projects</span>
+            {/* Developer Avatar & Status */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-cyan-500/70 ring-offset-2 ring-offset-slate-950 shadow-xl shadow-cyan-500/15 shrink-0 bg-slate-900">
+                <Image
+                  src={profileData.avatarUrl}
+                  alt={profileData.name}
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 64px, 80px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 font-mono w-fit">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Available for Software Engineering Roles</span>
+                </div>
+                <span className="text-xs font-mono text-cyan-400">
+                  {profileData.title} &bull; {profileData.location}
+                </span>
+              </div>
             </div>
 
             {/* Headline */}
