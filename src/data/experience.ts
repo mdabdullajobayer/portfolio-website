@@ -14,50 +14,49 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    id: "software-developer-current",
+    id: "software-developer-vida",
     role: "Software Developer",
-    company: "Software Engineering & Tech Solutions", // Editable placeholder: replace with your primary employer name
+    company: "Vida Technology",
     companyLocation: "Dhaka, Bangladesh",
-    period: "2023 - Present",
+    period: "February 2025 – Present",
     isCurrent: true,
     employmentType: "Full-time",
     summary:
-      "Core software development focused on building, scaling, and maintaining enterprise web applications, RESTful APIs, and SaaS platforms using PHP, Laravel, and React.",
+      "Software development focusing on PHP/Laravel backend engineering, business applications, RESTful APIs, and database design.",
     responsibilities: [
-      "Develop and maintain production business software modules including inventory tracking, billing, and order management.",
-      "Design normalized relational database schemas in MySQL and PostgreSQL with strict referential integrity.",
-      "Build secure RESTful APIs consumed by React and Next.js frontends and third-party webhook integrations.",
-      "Identify application and query performance bottlenecks; optimize slow queries using EXPLAIN plans and composite indexing.",
-      "Deploy and maintain web applications on Linux VPS environments utilizing Nginx, Apache, and Docker.",
+      "Develop and maintain business application features and workflows in PHP and Laravel.",
+      "Design relational database schemas and queries in MySQL and PostgreSQL with referential integrity.",
+      "Build and integrate RESTful APIs for frontend web applications and external services.",
+      "Collaborate on codebase maintenance, feature improvements, and deployment workflows.",
     ],
     accomplishments: [
-      "Engineered multi-tenant scoping logic ensuring isolated customer environments across high-volume operational systems.",
-      "Streamlined slow transactional queries, significantly reducing database server load during peak reporting hours.",
-      "Implemented resilient payment gateway webhooks with automated idempotency and error logging.",
+      "Delivered operational software modules adhering to structured business logic and validation rules.",
+      "Optimized complex queries and improved database schema design for business-critical features.",
+      "Implemented secure API endpoints and third-party service integrations.",
     ],
-    technologies: ["PHP", "Laravel", "React", "Next.js", "MySQL", "PostgreSQL", "REST APIs", "Linux VPS", "Nginx", "Docker"],
+    technologies: ["PHP", "Laravel", "React", "Next.js", "MySQL", "PostgreSQL", "REST APIs", "Git"],
   },
   {
-    id: "junior-software-developer",
-    role: "Junior Web Developer",
-    company: "Digital Systems & Web Development", // Editable placeholder: replace with earlier company or freelance practice
+    id: "software-developer-code-witchers",
+    role: "Software Developer",
+    company: "Code Witchers",
     companyLocation: "Dhaka, Bangladesh",
-    period: "2022 - 2023",
+    period: "March 2024 – February 2025",
     isCurrent: false,
     employmentType: "Full-time",
     summary:
-      "Assisted in full-stack web application development, custom business websites, database migrations, and responsive user interface implementation.",
+      "Backend and full-stack software development for business management systems, ERP modules, and client web applications.",
     responsibilities: [
-      "Implemented backend controllers, Eloquent ORM relationships, and input validation rules in Laravel.",
-      "Built responsive, mobile-first frontend interfaces using HTML5, modern CSS/Tailwind, and JavaScript/React.",
-      "Created database seeds, migrations, and schema updates for client project deployments.",
-      "Collaborated with project managers to translate client specifications into functional software features.",
+      "Developed backend controllers, models, and service layer logic using PHP and Laravel.",
+      "Implemented database migrations, model relationships, and transactional queries in MySQL.",
+      "Built responsive user interface components using React, JavaScript, and Tailwind CSS.",
+      "Participated in code reviews, API contract discussions, and system maintenance.",
     ],
     accomplishments: [
-      "Delivered multiple commercial client websites and internal management portals on schedule.",
-      "Reduced frontend styling inconsistencies by building modular, reusable UI components.",
+      "Contributed to core business logic and modules across HRM, inventory, and management systems.",
+      "Built reusable API endpoints and integrated payment and third-party webhook handlers.",
+      "Collaborated with cross-functional team members to deliver client projects on schedule.",
     ],
-    technologies: ["PHP", "Laravel", "JavaScript", "React", "MySQL", "Tailwind CSS", "Git"],
+    technologies: ["PHP", "Laravel", "JavaScript", "React", "MySQL", "REST APIs", "Tailwind CSS", "Git"],
   },
 ];
-

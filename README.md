@@ -168,8 +168,8 @@ Each project object includes:
    ```
 2. Clone repository & install dependencies:
    ```bash
-   git clone https://github.com/mdabdullajobayer/portfolio.git
-   cd portfolio
+   git clone https://github.com/mdabdullajobayer/portfolio-website.git
+   cd portfolio-website
    npm install
    npm run build
    ```
@@ -208,7 +208,6 @@ Each project object includes:
 Before deploying live to your custom domain, review and supply:
 
 - [ ] **Official Resume PDF:** Add `Abdullah_Jobayer_Resume.pdf` to `public/documents/` and set `hasResumeFile: true` in `src/data/profile.ts`.
-- [ ] **Contact Email:** Verify or update `email` in `src/data/profile.ts`.
-- [ ] **Company Names in Experience:** If you wish to specify exact legal employer names, update `company` fields in `src/data/experience.ts`.
+- [ ] **Contact Email:** Verify or update `email` in `src/data/profile.ts` (`abdullahjobayer.dev@gmail.com`).
 - [ ] **Production Domain:** Once you purchase/configure your production domain, update `baseUrl` in `src/app/sitemap.ts` and metadata URLs.
-- [ ] **Project Screenshots:** Optional screenshots can be added to `public/images/projects/` and linked to project detail pages.
+- [ ] **Public Project URLs:** If any specific project repository becomes publicly accessible on GitHub, add its dedicated repository URL to `src/data/projects.ts`.

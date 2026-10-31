@@ -22,167 +22,166 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "pharmacy-management-saas",
-    title: "Multi-Tenant Pharmacy Management SaaS",
-    tagline: "Cloud-based SaaS for multi-branch pharmacies with batch tracking, expiry monitoring, and POS billing.",
-    category: "Pharmacy Management SaaS",
+    title: "Multi-Tenant Pharmacy Management System",
+    tagline: "Web-based pharmacy management system supporting batch tracking, expiry monitoring, and POS billing.",
+    category: "Pharmacy Management Software",
     problem:
-      "Independent pharmacies and multi-outlet dispensaries required a secure, centralized system to track medicine batches, enforce FIFO inventory depletion to avoid selling expired drugs, and manage high-volume counter sales without network lag.",
+      "Retail pharmacies and dispensary branches require systematic methods to track batch numbers, enforce FIFO stock depletion to prevent selling expired medicines, and manage counter billing.",
     solution:
-      "Architected a multi-tenant web application featuring tenant isolation, real-time inventory ledger updates, barcode scanning POS, automated expiry alerts, and role-based permissions for cashiers, pharmacists, and managers.",
+      "Developed a web-based business management system featuring tenant scoping, inventory ledger recording, barcode POS checkout, expiry threshold alerts, and role-based access control.",
     myContribution:
-      "Led the backend architecture in Laravel and database design in MySQL. Designed the multi-tenant scoping logic, built RESTful endpoints for the POS interface, engineered the batch depletion algorithms, and built responsive administrative views in React.",
-    technologies: ["PHP", "Laravel", "MySQL", "React", "REST APIs", "Tailwind CSS", "Linux VPS"],
+      "Developed backend modules in Laravel and relational database schemas in MySQL. Implemented tenant query scoping, RESTful endpoints for the POS interface, batch deduction logic, and administrative UI components in React.",
+    technologies: ["PHP", "Laravel", "MySQL", "React", "REST APIs", "Tailwind CSS"],
     keyDecisions: [
-      "Implemented automatic global query scoping at the Eloquent model layer to enforce strict tenant isolation across all tables.",
-      "Wrapped multi-item point-of-sale checkouts in atomic database transactions to eliminate partial stock deductions during peak retail hours.",
-      "Scheduled background queue jobs for nightly medicine expiry re-indexing and automated low-stock alert generation.",
+      "Applied global query scoping at the Eloquent model layer to enforce tenant isolation across multi-branch tables.",
+      "Wrapped multi-item point-of-sale checkouts in database transactions to maintain atomic inventory deduction.",
+      "Configured scheduled background tasks for medicine expiry checks and low-stock notification triggers.",
     ],
     outcomes: [
-      "Streamlined POS checkout speed with predictable sub-second transaction processing.",
-      "Eliminated manual medicine expiry tracking errors through automated threshold monitoring.",
-      "Enabled business owners to manage multiple pharmacy outlets under a unified dashboard.",
+      "Implemented batch-level FIFO inventory deduction rules for prescription and OTC medicines.",
+      "Integrated automated expiry threshold alerts for store inventory reviews.",
+      "Provided multi-branch data separation under a centralized administrative backend.",
     ],
-    githubUrl: "https://github.com/mdabdullajobayer",
-    liveUrl: null, // Proprietary client software; live credentials available upon request for private demo
+    githubUrl: null, // Proprietary business software; specific source code is not public
+    liveUrl: null,
     isProprietary: true,
     featured: true,
     architectureDetails: [
       {
         title: "Tenant Scoping Pattern",
-        description: "Enforces tenant_id isolation across all Eloquent queries via global model scopes, preventing cross-tenant data leakage.",
+        description: "Enforces tenant_id isolation across Eloquent queries to separate data across independent pharmacy accounts.",
       },
       {
         title: "Batch Depletion (FIFO)",
-        description: "Stock transactions deduct from the earliest expiring batch first, maintaining data integrity in high-frequency sales.",
+        description: "Stock deduction algorithm deducts from earliest-expiring medicine batches first to support inventory accuracy.",
       },
       {
         title: "Role-Based Access Control",
-        description: "Granular permissions restricting POS discounts, stock adjustments, and financial audits by user roles.",
+        description: "Granular permissions restricting POS discounts, stock adjustments, and administrative reports by role.",
       },
     ],
   },
   {
     slug: "erp-business-management-software",
     title: "ERP & Multi-Warehouse Business Management System",
-    tagline: "Integrated ERP core handling multi-warehouse inventory, procurement workflows, and double-entry ledger recording.",
-    category: "ERP & Business Management Software",
+    tagline: "Integrated business management system for multi-warehouse inventory, procurement, and ledger recording.",
+    category: "ERP & Business Management Systems",
     problem:
-      "Growing distribution businesses faced synchronization errors between procurement, multi-warehouse stock transfers, invoicing, and accounting ledgers, leading to stock discrepancies and delayed monthly reconciliations.",
+      "Distribution businesses face operational friction between purchasing, inter-warehouse transfers, customer invoicing, and accounting records, resulting in stock discrepancies and delayed reconciliations.",
     solution:
-      "Developed a comprehensive business management system connecting requisition workflows, purchase orders, multi-warehouse stock transfers, and automated journal voucher creation for double-entry bookkeeping.",
+      "Built an integrated business software core connecting purchase orders, multi-warehouse stock movements, and journal voucher creation for bookkeeping.",
     myContribution:
-      "Designed the relational database schema in MySQL/PostgreSQL with strict foreign key constraints. Implemented the core business logic in Laravel, including approval hierarchies, stock ledger logging, and comprehensive RESTful reporting endpoints.",
-    technologies: ["Laravel", "PHP", "MySQL", "PostgreSQL", "React", "REST APIs", "Nginx"],
+      "Designed normalized relational database schemas in MySQL and PostgreSQL with foreign key constraints. Implemented business logic in Laravel for approval steps, stock ledger logging, and RESTful reporting endpoints.",
+    technologies: ["PHP", "Laravel", "MySQL", "PostgreSQL", "React", "REST APIs"],
     keyDecisions: [
-      "Designed an immutable transaction ledger pattern: stock and financial balances are never modified directly, but recorded as audit-logged credit/debit entries.",
-      "Created transactional transfer locks to ensure items in transit between warehouses cannot be duplicated or sold prematurely.",
-      "Utilized eager loading and database aggregation queries to generate balance sheets and ledger reports efficiently.",
+      "Adopted an audit-logged transaction ledger pattern where inventory movements record explicit credit/debit entries.",
+      "Implemented transactional locks for items in transit between warehouses to maintain accurate stock states.",
+      "Utilized eager loading and database aggregation queries to generate ledger and inventory balance reports.",
     ],
     outcomes: [
-      "Unified purchasing, inventory tracking, and invoicing into a single audited workflow.",
-      "Prevented ledger discrepancies with automated accounting voucher generation upon order delivery.",
-      "Delivered real-time multi-warehouse stock visibility for operational leadership.",
+      "Connected procurement, warehouse stock transfers, and invoicing into an audited operational flow.",
+      "Automated accounting voucher entry generation when purchase and sales orders are fulfilled.",
+      "Enabled operational teams to view consolidated multi-warehouse stock balances.",
     ],
-    githubUrl: "https://github.com/mdabdullajobayer",
+    githubUrl: null, // Proprietary business software
     liveUrl: null,
     isProprietary: true,
     featured: true,
     architectureDetails: [
       {
         title: "Immutable Stock Ledger",
-        description: "All inventory movements (inward, outward, damage, transfer) write append-only log entries to ensure audit trail accuracy.",
+        description: "Inventory movements (receipts, issues, adjustments, transfers) write audit log entries for historical tracking.",
       },
       {
         title: "Multi-Step Approval Workflows",
-        description: "Configurable threshold approvals where high-value purchase orders require manager and director authorizations.",
+        description: "Configurable approval levels where purchase orders require designated manager reviews.",
       },
       {
-        title: "Optimized Aggregate Reporting",
-        description: "Pre-indexed date partitions and optimized SQL views powering responsive financial balance reports.",
+        title: "Aggregate Reporting Queries",
+        description: "Indexed date columns and aggregate SQL queries powering financial and stock summary reports.",
       },
     ],
   },
   {
     slug: "ecommerce-order-management-backend",
-    title: "Scalable E-Commerce & Order Management Engine",
-    tagline: "High-reliability backend for online stores handling order processing, cart management, and payment webhooks.",
-    category: "E-commerce Applications",
+    title: "E-Commerce & Order Management Backend",
+    tagline: "Backend services for online ordering, cart management, and payment gateway webhook processing.",
+    category: "SaaS & Web Applications",
     problem:
-      "Online retail platforms face inventory race conditions during flash promotions, cart abandonment caused by slow API checkouts, and missed order status updates due to unstable external payment webhooks.",
+      "Online order processing requires reliable inventory locking during checkout, resilient webhook handlers for external payment confirmations, and asynchronous notification delivery.",
     solution:
-      "Engineered an order management and checkout backend with optimistic and pessimistic locking mechanisms, idempotent webhook listeners, cart persistence, and asynchronous notification queues.",
+      "Built an order processing backend with database transaction locking, idempotent payment webhook verification, cart persistence, and background queue handling.",
     myContribution:
-      "Built the Laravel REST API layer, designed the order state machine (pending, paid, processing, dispatched, cancelled), implemented webhook verification handlers, and deployed the stack onto Linux VPS with Nginx.",
-    technologies: ["PHP", "Laravel", "MySQL", "REST APIs", "Docker", "Linux VPS", "Nginx"],
+      "Developed Laravel RESTful API endpoints, implemented order status state transitions, integrated webhook listeners with signature checks, and built database migrations in MySQL.",
+    technologies: ["PHP", "Laravel", "MySQL", "REST APIs", "Git"],
     keyDecisions: [
-      "Implemented database row locking (`selectForUpdate`) during checkout finalization to prevent overselling low-inventory SKUs.",
-      "Built idempotent webhook handlers using unique transaction hashes to guard against duplicate payment capture callbacks.",
-      "Offloaded transactional email receipt generation and SMS notifications to asynchronous background queues.",
+      "Utilized database row locking (`selectForUpdate`) during checkout to maintain inventory integrity during concurrent checkouts.",
+      "Implemented idempotent webhook handlers using transaction reference checks to guard against duplicated payment callbacks.",
+      "Offloaded transactional email confirmations and SMS alerts to asynchronous background queues.",
     ],
     outcomes: [
-      "Zero inventory discrepancies recorded during concurrent customer order placements.",
-      "Resilient webhook architecture with automated retry capabilities for flaky external network calls.",
-      "Fast API response latency maintained under concurrent shopping traffic.",
+      "Implemented transactional checkout flows preventing overselling during order placement.",
+      "Built idempotent webhook listeners with signature verification for payment status updates.",
+      "Separated real-time checkout responses from background notification processing.",
     ],
-    githubUrl: "https://github.com/mdabdullajobayer",
+    githubUrl: null, // Client business software; specific source code is private
     liveUrl: null,
-    isProprietary: false,
+    isProprietary: true,
     featured: true,
     architectureDetails: [
       {
-        title: "Order State Machine",
-        description: "Rigid status progression rules preventing orders from skipping required payment confirmation or fulfillment stages.",
+        title: "Order State Transition Rules",
+        description: "Strict status progression preventing orders from skipping required payment confirmation or dispatch stages.",
       },
       {
-        title: "Idempotent Webhooks",
-        description: "Ensures duplicate HTTP callbacks from payment gateways never trigger duplicate database charges or inventory drops.",
+        title: "Idempotent Webhook Handler",
+        description: "Validates payment signatures and tracks processed callback IDs to avoid duplicate order charges.",
       },
       {
-        title: "Asynchronous Queue Pipeline",
-        description: "Separates real-time HTTP checkout responses from third-party notification delivery services.",
+        title: "Background Queue Processing",
+        description: "Asynchronous task queue handles email receipts and external notifications outside the main HTTP request loop.",
       },
     ],
   },
   {
     slug: "database-query-optimization-initiative",
-    title: "Database Performance & Query Optimization Engineering",
-    tagline: "Diagnosing bottlenecks, refactoring relational queries, and designing composite indexes for high-volume datasets.",
-    category: "Database Performance Optimization",
+    title: "Database Performance & Query Optimization",
+    tagline: "Profiling slow queries, refactoring Eloquent ORM calls, and designing composite indexes for relational tables.",
+    category: "Database Performance & Optimization",
     problem:
-      "As transaction history grew into hundreds of thousands of records, reporting queries and operational search endpoints experienced severe latency spikes, table locking, and occasional database connection timeouts.",
+      "As database tables grew with operational history, reporting queries and operational search endpoints experienced latency spikes and table locking caused by missing indexes and unoptimized ORM queries.",
     solution:
-      "Conducted systemic slow-query profiling using EXPLAIN analysis, eliminated N+1 ORM query patterns, redesigned indexing strategies, and restructured heavy analytical queries.",
+      "Profiled queries using EXPLAIN execution plans, eliminated N+1 query patterns, refactored dynamic date filters, and added targeted composite indexes.",
     myContribution:
-      "Led the profiling and query refactoring process. Replaced expensive full-table scans with composite indexes, restructured Eloquent relationships to use explicit eager loading, and introduced query result caching for semi-static settings.",
+      "Analyzed slow query logs, identified missing indexes on joined foreign keys and timestamp columns, and refactored Eloquent relationships to use explicit eager loading.",
     technologies: ["MySQL", "PostgreSQL", "Laravel", "Database Indexing", "EXPLAIN Analysis"],
     keyDecisions: [
-      "Replaced dynamic SQL date functions in `WHERE` clauses with static bounding ranges, allowing MySQL to leverage existing B-tree indexes.",
-      "Added composite indexes tailored to match the compound filtering patterns frequently executed by operational staff.",
-      "Eliminated nested Eloquent N+1 loops by enforcing strict eager loading in development environments (`Model::preventLazyLoading()`).",
+      "Replaced dynamic SQL date functions on indexed columns with static bounding timestamp ranges to enable index seeks.",
+      "Added composite indexes matching compound filtering and sorting clauses frequently executed by reporting dashboards.",
+      "Enforced explicit eager loading across nested relationships to prevent N+1 query regressions.",
     ],
     outcomes: [
-      "Transformed expensive multi-second query execution times down to predictable sub-100ms response intervals.",
-      "Significantly reduced database CPU spikes during business-hour reporting generation.",
-      "Eliminated query timeouts across primary transactional tables.",
+      "Turned full table scans into targeted index seeks on high-frequency operational queries.",
+      "Eliminated redundant database queries across dashboard views by eager-loading related models.",
+      "Structured composite index strategies aligned with production search and filtering patterns.",
     ],
-    githubUrl: "https://github.com/mdabdullajobayer",
+    githubUrl: null, // Technical optimization work performed across business software projects
     liveUrl: null,
-    isProprietary: false,
+    isProprietary: true,
     featured: false,
     architectureDetails: [
       {
-        title: "EXPLAIN Query Analysis",
-        description: "Systematic review of execution plans to turn 'type: ALL' table scans into targeted 'type: ref' or 'range' index seeks.",
+        title: "EXPLAIN Plan Review",
+        description: "Evaluated query execution plans to identify unindexed full table scans and refine key utilization.",
       },
       {
         title: "Composite Index Ordering",
-        description: "Calculated index column ordering following equality-first and range-last principles for high selectivity.",
+        description: "Structured compound index columns to match equality filtering first and range conditions second.",
       },
       {
-        title: "N+1 Detection",
-        description: "Integrated automated detection preventing unindexed relational loops from reaching production deployments.",
+        title: "Eager Loading Enforcement",
+        description: "Audited relational queries to replace per-iteration queries with batched relational joins.",
       },
     ],
   },
 ];
-

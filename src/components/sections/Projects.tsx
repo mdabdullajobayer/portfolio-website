@@ -11,10 +11,7 @@ export function Projects() {
 
   const categories = [
     "All",
-    "Pharmacy Management SaaS",
-    "ERP & Business Management Software",
-    "E-commerce Applications",
-    "Database Performance Optimization",
+    ...Array.from(new Set(projects.map((p) => p.category))),
   ];
 
   const filteredProjects =

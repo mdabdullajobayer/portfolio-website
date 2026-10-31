@@ -117,7 +117,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   variant="secondary"
                   icon={<GithubIcon className="w-4 h-4" />}
                 >
-                  View GitHub Profile / Repo
+                  View Repository
                 </Button>
               )}
               {project.liveUrl && (

@@ -199,34 +199,30 @@ export function Hero() {
 
                 <div>
                   <span className="text-cyan-400">$</span>{" "}
-                  <span className="text-white">php artisan check:readiness</span>
+                  <span className="text-white">git status</span>
                 </div>
 
-                <div className="text-[11px] space-y-1 text-slate-400">
-                  <div className="flex items-center justify-between text-slate-300">
-                    <span>&bull; Database integrity checks</span>
-                    <span className="text-emerald-400 font-bold">[PASSED]</span>
+                <div className="text-[11px] space-y-1.5 text-slate-400">
+                  <div className="text-slate-300">
+                    <span>On branch </span>
+                    <span className="text-cyan-300 font-semibold">main</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-300">
-                    <span>&bull; API endpoint authentication</span>
-                    <span className="text-emerald-400 font-bold">[PASSED]</span>
+                  <div className="text-slate-300">
+                    <span>Primary Stack: </span>
+                    <span className="text-slate-400">PHP / Laravel, React, Next.js, MySQL</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-300">
-                    <span>&bull; N+1 query regression guard</span>
-                    <span className="text-emerald-400 font-bold">[ACTIVE]</span>
-                  </div>
-                  <div className="flex items-center justify-between text-slate-300">
-                    <span>&bull; Multi-tenant schema boundary</span>
-                    <span className="text-emerald-400 font-bold">[VERIFIED]</span>
+                  <div className="text-slate-300">
+                    <span>Business Domains: </span>
+                    <span className="text-slate-400">HRM, Payroll, CRM, POS, Inventory, ERP</span>
                   </div>
                 </div>
 
                 <div className="pt-2 border-t border-slate-900 flex items-center justify-between text-[11px] text-slate-400">
                   <span className="flex items-center gap-1.5">
                     <Code2 className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Clean Architecture Principles</span>
+                    <span>Software Development &bull; Dhaka, Bangladesh</span>
                   </span>
-                  <span className="text-emerald-400 font-mono">0 errors</span>
+                  <span className="text-cyan-400 font-mono">verified</span>
                 </div>
               </div>
             </div>
